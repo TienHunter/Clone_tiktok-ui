@@ -1,11 +1,90 @@
 .wrapper {
+   --search-height: 46px;
+   --search-button-width: 52px;
    height: var(--default-layout-header-height);
-   display: flex;
-   justify-content: center;
    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
    width: 100%;
+   display: flex;
+   justify-content: center;
    .content {
       width: var(--default-layout-header-width);
-      background-color: #ccc;
+      height: 100%;
+      // background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+      }
+   }
+}
+.search {
+   position: relative;
+   display: flex;
+   align-items: center;
+   padding: 0 16px;
+   background: rgba(22, 24, 35, 0.06);
+   border-radius: 92px;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   height: var(--search-height);
+   border: 1.5px solid transparent;
+   input {
+      font-size: 1.6rem;
+      line-height: 22px;
+      // padding: 12px 0;
+      padding-right: 0;
+      background: transparent;
+      width: 292px;
+      color: var(--black);
+      caret-color: rgba(254, 44, 85, 1);
+   }
+   input:not(:placeholder-shown) ~ .search-btn {
+      color: rgba(22, 24, 35, 0.75);
+   }
+
+   input:focus-within ~ .search {
+      border: 1.5px solid rgba(22, 24, 35, 0.2);
+   }
+   &::after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: calc(var(--search-height) - 18px);
+      top: 9px;
+      right: var(--search-button-width);
+      background: rgba(22, 24, 35, 0.12);
+   }
+   .clean,
+   .loading {
+      position: absolute;
+      color: rgba(22, 24, 35, 0.35);
+   }
+   .clean {
+      font-size: 1.6rem;
+      right: calc(var(--search-button-width) + 16px);
+      top: 50%;
+      transform: translateY(-50%);
+   }
+   .loading {
+      display: none;
+   }
+   .search-btn {
+      font-size: 1.8rem;
+      /* padding: 11px 16px 11px 12px; */
+      /* margin: -12px -16px; */
+      margin-right: -16px;
+      height: 100%;
+      width: var(--search-button-width);
+      cursor: pointer;
+      background: transparent;
+      margin-left: 0;
+      color: rgba(22, 24, 35, 0.34);
+      &:hover {
+         background: rgba(22, 24, 35, 0.03);
+      }
+      &:active {
+         background: rgba(22, 24, 35, 0.06);
+      }
    }
 }
