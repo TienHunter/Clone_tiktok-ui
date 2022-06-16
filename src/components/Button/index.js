@@ -19,7 +19,6 @@ function Button({
    onClick,
    ...passProps
 }) {
-   console.log('checkonclick:', onClick);
    let Comp = 'button';
    const classes = cx('wrapper', {
       [className]: className,

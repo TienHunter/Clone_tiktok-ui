@@ -3,7 +3,11 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
    faCircleXmark,
+   faEarthAsia,
+   faEllipsisVertical,
+   faKeyboard,
    faMagnifyingGlass,
+   faQuestionCircle,
    faSignIn,
    faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +18,24 @@ import images from '~/assets/image';
 import { Wrapper as PropperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+   {
+      icon: <FontAwesomeIcon icon={faEarthAsia} />,
+      title: 'English',
+   },
+   {
+      icon: <FontAwesomeIcon icon={faQuestionCircle} />,
+      title: 'Feedback and help',
+      to: '/feedback',
+   },
+   {
+      icon: <FontAwesomeIcon icon={faKeyboard} />,
+      title: 'Keyboard shortcuts',
+   },
+];
 function Header() {
    const [searchResult, setSearchResult] = useState([]);
    useEffect(() => {
@@ -66,17 +87,22 @@ function Header() {
                <Button text type="medium">
                   Upload
                </Button>
-               <Button primary rounded type="large">
+               <Button primary type="medium">
                   Log in
                </Button>
-               <Button
+               {/* <Button
                   rounded
                   type="medium"
                   // leftIcon={<FontAwesomeIcon icon={faSignIn} />}
                   // rightIcon={<FontAwesomeIcon icon={faSignIn} />}
                >
                   Register
-               </Button>
+               </Button> */}
+               <Menu items={MENU_ITEMS}>
+                  <button className={cx('more-btn')}>
+                     <FontAwesomeIcon icon={faEllipsisVertical} />
+                  </button>
+               </Menu>
             </div>
          </div>
       </header>
