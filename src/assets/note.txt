@@ -8,3 +8,10 @@
 - Create component Image:
    để customize các img 
    tạo component Image ở components/Image
+   sử dụng forwardRef để truyền ref ra ngoài component
+
+
+//105:  Xây dựng Logic phần Header #1
+   tách Search component từ Header component để tránh khi Search onChange thì Header không phải re-render
+   +, Search component
+   thêm các state để ẩn hiện Tippy, clear-btn
