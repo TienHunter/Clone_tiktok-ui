@@ -117,6 +117,8 @@
 .action-btn {
    background-color: transparent;
    font-size: 2.2rem;
+   // line-height: 46px;
+   display: flex;
    color: #161823;
    padding: 4px 8px;
    margin: 0 4px;
@@ -127,5 +129,6 @@
    height: 32px;
    border-radius: 50%;
    object-fit: cover;
+   margin: 0 8px;
    cursor: pointer;
 }

@@ -26,6 +26,8 @@ import { Wrapper as PropperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -142,6 +144,16 @@ function Header() {
                            <FontAwesomeIcon icon={faCloudArrowUp} />
                         </button>
                      </Tippy>
+                     <Tippy delay={[0, 200]} content="message...">
+                        <button className={cx('action-btn')}>
+                           <MessageIcon />
+                        </button>
+                     </Tippy>
+                     <Tippy delay={[0, 200]} content="inbox...">
+                        <button className={cx('action-btn')}>
+                           <InboxIcon />
+                        </button>
+                     </Tippy>
                   </>
                ) : (
                   <>
@@ -166,10 +178,11 @@ function Header() {
                   onChange={handleMenuChange}
                >
                   {currentUser ? (
-                     <img
+                     <Image
                         className={cx('user-avatar')}
                         src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d5d7b58b1a7f01f757e6639d0f9aeb83~c5_100x100.jpeg?x-expires=1655956800&x-signature=8O4CqsQS8qfRfJJRuJyE%2Fp23w8E%3D"
                         alt="avatar"
+                        fallback="https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-1/97091734_1048543062213207_2809028836308549632_n.jpg?stp=dst-jpg_p320x320&_nc_cat=110&ccb=1-7&_nc_sid=7206a8&_nc_ohc=rJ81-76cC_wAX8M2IMl&_nc_ht=scontent.fhan14-1.fna&oh=00_AT-1R0NIKr3izzBmQ8anxzrr4z7r2IxJXoBbCI0jZ1wpFA&oe=62D965FA"
                      />
                   ) : (
                      <button className={cx('more-btn')}>

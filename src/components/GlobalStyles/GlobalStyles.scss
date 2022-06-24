@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 * {
    box-sizing: border-box;
    margin: 0;
@@ -18,7 +17,7 @@ html {
    font-size: 62.5%;
 }
 body {
-   font-family: 'IBM Plex Sans', sans-serif;
+   font-family: 'ProximaNova', sans-serif;
    font-size: 1.6rem;
    line-height: 1.5;
    text-rendering: optimizeSpeed;
@@ -35,6 +34,22 @@ a[href] {
    color: var(--text-color);
 }
 
+//Fonts embedded
+@font-face {
+   font-family: ProximaNova;
+   src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+   font-weight: 400;
+}
+@font-face {
+   font-family: ProximaNova;
+   src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+   font-weight: 600;
+}
+@font-face {
+   font-family: SofiaPro;
+   src: url('/assets/fonts/sofiapro-semibold.otf');
+   font-weight: 600;
+}
 // customize tippy tooltip's
 
 body {

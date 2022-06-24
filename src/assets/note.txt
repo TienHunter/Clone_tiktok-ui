@@ -1,0 +1,10 @@
+// note from video 104 : Xây dựng UI phần Header #7
+- Replace font-family:
+    /asset/fonts
+   Nhúng font -> GlobalStyles @font-face
+- Replace Header Icons:
+   tạo component ở components/Icons
+   export component svg customize
+- Create component Image:
+   để customize các img 
+   tạo component Image ở components/Image
