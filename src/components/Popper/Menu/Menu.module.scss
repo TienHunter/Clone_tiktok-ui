@@ -21,6 +21,11 @@
 }
 .menu-propper {
    padding-bottom: 8px;
+   display: flex;
+   flex-direction: column;
+}
+.menu-body {
+   overflow-y: auto;
 }
 
 //Header
@@ -28,6 +33,7 @@
    position: relative;
    height: 50px;
    margin-top: -8px;
+   flex-shrink: 0;
 }
 .back-btn {
    height: 100%;
