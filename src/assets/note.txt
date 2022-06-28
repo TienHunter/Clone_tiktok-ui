@@ -18,3 +18,14 @@
 // 106: Xây dựng Logic phần Header #2
    fetch API test acoount , làm animation loading, clear searchInput
    dùng encodeURIComponent() để mã hóa dữ liệu tìm kiếm -> tránh ký tự đặc biệt
+
+// 107: Xây dựng Logic phần Header #3
+   custom hooks useDebounce ... để khi nhập xong mới fetch
+
+// 108: Tìm hiểu và sử dụng thư viện Axios
+   - npm i axios
+
+   -utils/request  (instance request)
+      -> cấu hình request
+
+   apiService/searchService -> viết API

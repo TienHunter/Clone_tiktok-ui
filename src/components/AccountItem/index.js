@@ -6,11 +6,11 @@ import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import Image from '~/components/Image';
 const cx = classNames.bind(styles);
-function AccountItem({ data }) {
+function AccountItem({ data, onClick }) {
    let { full_name, avatar, tick, nickname } = data;
    // console.log(avatar);
    return (
-      <Link to={`/@${nickname}`} className={cx('wrapper')}>
+      <Link to={`/@${nickname}`} className={cx('wrapper')} onClick={onClick}>
          <Image src={avatar} className={cx('avatar')} alt={nickname} />
          <div className={cx('infor')}>
             <p className={cx('name')}>
