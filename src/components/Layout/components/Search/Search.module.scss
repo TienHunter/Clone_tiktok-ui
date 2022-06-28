@@ -19,17 +19,18 @@
       font-size: 1.6rem;
       line-height: 22px;
       // padding: 12px 0;
-      padding-right: 0;
+      padding-right: 40px;
       background: transparent;
       // width: 292px;
       color: var(--black);
       caret-color: rgba(254, 44, 85, 1);
+      font-family: var(--font-family);
    }
    input:not(:placeholder-shown) ~ .search-btn {
       color: rgba(22, 24, 35, 0.75);
    }
 
-   input:focus-within ~ .search {
+   &:focus-within {
       border: 1.5px solid rgba(22, 24, 35, 0.2);
    }
    &::after {
