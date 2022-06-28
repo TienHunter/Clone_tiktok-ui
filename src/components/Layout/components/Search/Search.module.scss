@@ -45,15 +45,22 @@
    .loading {
       position: absolute;
       color: rgba(22, 24, 35, 0.35);
-   }
-   .clean {
       font-size: 1.6rem;
       right: calc(var(--search-button-width) + 16px);
       top: 50%;
       transform: translateY(-50%);
    }
+
    .loading {
-      display: none;
+      animation: spiner 0.8s linear infinite;
+   }
+   @keyframes spiner {
+      from {
+         transform: translateY(-50%) rotate(0);
+      }
+      to {
+         transform: translateY(-50%) rotate(360deg);
+      }
    }
    .search-btn {
       font-size: 1.8rem;

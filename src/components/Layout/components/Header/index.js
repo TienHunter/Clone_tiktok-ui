@@ -81,7 +81,7 @@ function Header() {
    ];
    //handle logic
    const handleMenuChange = (menuItem) => {
-      console.log(menuItem);
+      // console.log(menuItem);
    };
    return (
       <header className={cx('wrapper')}>

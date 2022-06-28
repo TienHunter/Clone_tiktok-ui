@@ -15,3 +15,6 @@
    tách Search component từ Header component để tránh khi Search onChange thì Header không phải re-render
    +, Search component
    thêm các state để ẩn hiện Tippy, clear-btn
+// 106: Xây dựng Logic phần Header #2
+   fetch API test acoount , làm animation loading, clear searchInput
+   dùng encodeURIComponent() để mã hóa dữ liệu tìm kiếm -> tránh ký tự đặc biệt

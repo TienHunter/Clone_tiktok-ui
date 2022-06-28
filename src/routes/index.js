@@ -11,7 +11,7 @@ import Upload from '~/pages/Upload';
 const publicRoutes = [
    { path: '/', element: Home },
    { path: '/following', element: Following },
-   { path: '/profile', element: Profile, layout: null },
+   { path: '/@:nickname', element: Profile },
    { path: '/upload', element: Upload, layout: HeaderOnly },
 ];
 const privateRoutes = [];

@@ -9,7 +9,8 @@ function Image(
    const hanleError = () => {
       setFallback(customFallback);
    };
-   console.log(fallback);
+   // console.log(src);
+   // console.log(fallback);
    // console.log(customFallback);
    return (
       <img
