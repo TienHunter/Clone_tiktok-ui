@@ -53,3 +53,6 @@
    https://www.npmjs.com/package/prop-types
 
 // 113: Áp dụng PropTypes vào dự án
+// fix: Using forwardRef with proptypes and eslint
+   component Image -> ... 
+//114:  Giải quyết vấn đề nhiều file index.js
