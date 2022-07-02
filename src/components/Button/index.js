@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Button({
-   to,
    href,
+   to,
    primary = false,
    outline = false,
    text = false,
@@ -60,6 +60,18 @@ function Button({
    );
 }
 Button.propTypes = {
+   href: PropTypes.string,
+   to: PropTypes.string,
+   className: PropTypes.string,
+   type: PropTypes.string,
+   primary: PropTypes.bool,
+   outline: PropTypes.bool,
+   text: PropTypes.bool,
+   disable: PropTypes.bool,
+   rounded: PropTypes.bool,
+   leftIcon: PropTypes.node,
+   rightIcon: PropTypes.node,
    children: PropTypes.node.isRequired,
+   onClick: PropTypes.func,
 };
 export default Button;

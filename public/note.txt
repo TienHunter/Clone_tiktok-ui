@@ -51,3 +51,5 @@
 
 // 112: Tìm hiểu thư viện PropTypes
    https://www.npmjs.com/package/prop-types
+
+// 113: Áp dụng PropTypes vào dự án
