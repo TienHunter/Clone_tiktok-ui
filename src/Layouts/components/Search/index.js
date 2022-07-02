@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless'; // different import path!
@@ -7,17 +6,13 @@ import HeadlessTippy from '@tippyjs/react/headless'; // different import path!
 // components
 import { Wrapper as PropperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
-import {
-   faCircleXmark,
-   faMagnifyingGlass,
-   faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Search.module.scss';
 import { SearchIcon } from '~/components/Icons';
 import { useDebounce } from '~/hooks';
 
 // api
-import * as searchService from '~/apiServices/searchService';
+import * as searchService from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 
@@ -42,6 +37,7 @@ function Search() {
       };
 
       fetchApi();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [debounced]);
 
    const handleClear = () => {

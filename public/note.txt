@@ -42,3 +42,9 @@
    Thêm style overlay cho thanh cuộn body -> OK
    Sửa title trang và update favicon -> OK
    Fix warning thư viện Tippy -> OK
+
+// 111: Tái cấu trúc và tối ưu code #1
+   apiServices -> services
+   src/components/Layout -> src/layouts
+   routes config
+   Tạo file env, đưa cấu hình baseUrl ra .env.development
