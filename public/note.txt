@@ -48,3 +48,6 @@
    src/components/Layout -> src/layouts
    routes config
    Tạo file env, đưa cấu hình baseUrl ra .env.development
+
+// 112: Tìm hiểu thư viện PropTypes
+   https://www.npmjs.com/package/prop-types

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +9,6 @@ import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 function AccountItem({ data, onClick }) {
    let { full_name, avatar, tick, nickname } = data;
-   // console.log(avatar);
    return (
       <Link to={`/@${nickname}`} className={cx('wrapper')} onClick={onClick}>
          <Image src={avatar} className={cx('avatar')} alt={nickname} />
@@ -27,5 +27,7 @@ function AccountItem({ data, onClick }) {
       </Link>
    );
 }
-
+AccountItem.propTypes = {
+   data: PropTypes.object,
+};
 export default AccountItem;
