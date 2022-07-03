@@ -54,32 +54,33 @@ const MENU_ITEMS = [
       title: 'Keyboard shortcuts',
    },
 ];
+const userMenu = [
+   {
+      icon: <FontAwesomeIcon icon={faUser} />,
+      title: 'View profile',
+      to: '/profile',
+   },
+   {
+      icon: <FontAwesomeIcon icon={faCoins} />,
+      title: 'Get coin',
+      to: '/coin',
+   },
+   {
+      icon: <FontAwesomeIcon icon={faGear} />,
+      title: 'Setting',
+      to: '/setting',
+   },
+   ...MENU_ITEMS,
+   {
+      icon: <FontAwesomeIcon icon={faSignOut} />,
+      title: 'Log out',
+      to: '/logout',
+      borderTop: true,
+   },
+];
 function Header() {
    const currentUser = true;
-   const userMenu = [
-      {
-         icon: <FontAwesomeIcon icon={faUser} />,
-         title: 'View profile',
-         to: '/profile',
-      },
-      {
-         icon: <FontAwesomeIcon icon={faCoins} />,
-         title: 'Get coin',
-         to: '/coin',
-      },
-      {
-         icon: <FontAwesomeIcon icon={faGear} />,
-         title: 'Setting',
-         to: '/setting',
-      },
-      ...MENU_ITEMS,
-      {
-         icon: <FontAwesomeIcon icon={faSignOut} />,
-         title: 'Log out',
-         to: '/logout',
-         borderTop: true,
-      },
-   ];
+
    //handle logic
    const handleMenuChange = (menuItem) => {
       // console.log(menuItem);
@@ -115,10 +116,10 @@ function Header() {
                   </>
                ) : (
                   <>
-                     <Button text type="medium">
+                     <Button primary type="medium">
                         Upload
                      </Button>
-                     <Button primary type="medium">
+                     <Button primary type="medium" href="/">
                         Log in
                      </Button>
                      {/* <Button

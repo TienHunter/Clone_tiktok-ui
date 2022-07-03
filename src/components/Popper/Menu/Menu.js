@@ -19,7 +19,7 @@ function Menu({
    const [history, setHistory] = useState([{ data: items }]);
    const current = history[history.length - 1];
    // console.log('check history:', history);
-   // console.log(current);
+   // console.log('current : ', current);
    const renderItems = () => {
       return current.data.map((item, index) => {
          const isParent = !!item.children;
@@ -38,6 +38,23 @@ function Menu({
          );
       });
    };
+   const handleBack = () => {
+      setHistory((prev) => prev.splice(prev.length - 1, 1));
+   };
+   const renderReult = (attrs) => (
+      <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+         <PropperWrapper className={cx('menu-propper')}>
+            {history.length > 1 && (
+               <Header title={current.title} onBack={handleBack} />
+            )}
+            <div className={cx('menu-body')}>{renderItems()}</div>
+         </PropperWrapper>
+      </div>
+   );
+   // Reset to first menu
+   const handleReset = () => {
+      setHistory((prev) => prev.slice(0, 1));
+   };
    return (
       <Tippy
          interactive={true}
@@ -45,22 +62,8 @@ function Menu({
          delay={[0, 500]}
          offset={[16, 8]}
          hideOnClick={hideOnClick}
-         render={(attrs) => (
-            <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-               <PropperWrapper className={cx('menu-propper')}>
-                  {history.length > 1 && (
-                     <Header
-                        title={current.title}
-                        onBack={() => {
-                           setHistory((prev) => prev.slice(0, prev.length - 1));
-                        }}
-                     />
-                  )}
-                  <div className={cx('menu-body')}>{renderItems()}</div>
-               </PropperWrapper>
-            </div>
-         )}
-         onHide={() => setHistory((prev) => prev.slice(0, 1))}
+         render={renderReult}
+         onHide={handleReset}
       >
          {children}
       </Tippy>
