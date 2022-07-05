@@ -1,0 +1,44 @@
+.menu {
+   flex-shrink: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   padding: 20px 0 26px;
+   padding-left: 8px;
+   min-height: 100%;
+   margin-left: 4px;
+}
+
+.menu-item {
+   display: flex;
+   align-items: center;
+
+   padding: 8px;
+   border-radius: 4px;
+
+   cursor: pointer;
+   transition: background-color ease-in-out 200ms;
+   &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+   }
+   .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-left: 8px;
+   }
+   &.active {
+      color: var(--primary);
+      .selected {
+         display: flex;
+      }
+      .unSelected {
+         display: none;
+      }
+   }
+}
+.selected {
+   display: none;
+}
+.unSelected {
+   display: flex;
+}
